@@ -1,0 +1,16 @@
+[package]
+name = "wasserglas"
+version = "0.1.0"
+authors = ["SuperFluffy"]
+edition = "2018"
+description = "A fixed size thread-safe object pool with automatic reattachment"
+readme = "README.md"
+repository = "https://github.com/superfluffy/wasserglas-rs"
+homepage = "https://github.com/superfluffy/wasserglas-rs"
+documentation = "https://docs.rs/wasserglas"
+keywords = ["atomic", "garbage", "non-blocking", "lock-free"]
+categories = ["concurrency", "memory-management", "data-structures"]
+license = "MIT/Apache-2.0"
+
+[dependencies]
+parking_lot = "0.11"
