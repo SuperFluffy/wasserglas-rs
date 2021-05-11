@@ -64,7 +64,7 @@ impl<T> Pool<T> {
     /// parallel context.
     pub fn apply<F>(&self, f: F)
     where
-        F: Fn(&mut T),
+        F: FnMut(&mut T),
     {
         self.objects.lock().iter_mut().for_each(f);
     }
@@ -74,7 +74,7 @@ impl<T> Pool<T> {
     /// parallel context.
     pub fn try_apply<E, F>(&self, f: F) -> Result<(), E>
     where
-        F: Fn(&mut T) -> Result<(), E>,
+        F: FnMut(&mut T) -> Result<(), E>,
     {
         self.objects.lock().iter_mut().try_for_each(f)
     }
